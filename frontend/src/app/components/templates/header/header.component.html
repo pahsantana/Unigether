@@ -1,0 +1,41 @@
+<header>
+  <div class="container">
+    <a routerLink="/login" class="logo" routerLinkActive="active">
+      <img src="./../../../../assets/logo.png" alt="UniGether">
+    </a>
+    <nav>
+      <ul *ngIf="!isLoggedIn">
+        <li><a href="#">Sobre</a></li>
+        <li><a [routerLink]="['/cadastro']" class="nav-link">Registrar</a></li>
+        <a href="#" class="button">Login</a>
+      </ul>
+      <ul *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a href="/match" class="nav-link" routerLink="match">
+            <mat-icon>whatshot</mat-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/chat" class="nav-link">
+            <mat-icon>sms</mat-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/profile" class="nav-link" routerLink="profile">
+            <mat-icon>account_circle</mat-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/dados-pessoais" class="nav-link" routerLink="dados-pessoais">
+            <mat-icon>settings</mat-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href class="nav-link" (click)="logout()">
+            <mat-icon>person_off</mat-icon>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
